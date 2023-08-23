@@ -37,7 +37,12 @@ const Home = () => {
                 <div>
                     <img src={userProfile.pictureUrl} alt="Profile" />
                     <p>Name: {userProfile.displayName}</p>
+                    <p>UserId: {userProfile.userId}</p>
                     <p>Status Message: {userProfile.statusMessage}</p>
+                    <p>Language: {liff.getLanguage()}</p>
+                    <p>OS: {liff.getOS()}</p>
+                    <p>Line Version: {liff.getLineVersion()}</p>
+                    <p>LIFF SDK Version: {liff.getVersion()}</p>
                 </div>
             ) : (
                 <p>Loading user profile...</p>
