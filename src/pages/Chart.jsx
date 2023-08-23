@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Chart = () => {
-    return <div>Chart</div>;
+    return <div className="simpleTopSpacing">Chart</div>;
 };
 
 export default Chart;

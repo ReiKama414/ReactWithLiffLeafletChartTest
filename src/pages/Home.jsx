@@ -35,7 +35,7 @@ const Home = () => {
     };
 
     return (
-        <>
+        <div className='simpleTopSpacing'>
             {userProfile ? (
                 <div>
                     <img src={userProfile.pictureUrl} alt="Profile" />
@@ -50,7 +50,7 @@ const Home = () => {
             ) : (
                 <p>Loading user profile...</p>
             )}
-        </>
+        </div>
     );
 };
 
