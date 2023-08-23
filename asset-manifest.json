@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/ReactWithLiffLeafletChartTest/static/js/main.3dea4eec.js",
+    "static/js/787.bd8e6a9e.chunk.js": "/ReactWithLiffLeafletChartTest/static/js/787.bd8e6a9e.chunk.js",
+    "index.html": "/ReactWithLiffLeafletChartTest/index.html",
+    "main.3dea4eec.js.map": "/ReactWithLiffLeafletChartTest/static/js/main.3dea4eec.js.map",
+    "787.bd8e6a9e.chunk.js.map": "/ReactWithLiffLeafletChartTest/static/js/787.bd8e6a9e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3dea4eec.js"
+  ]
+}
