@@ -1,33 +1,36 @@
+// https://developers.line.biz/zh-hant/
 // npm install @line/liff
 import React, { useState, useEffect } from 'react';
 import liff from '@line/liff';
 
 const Home = () => {
     const [userProfile, setUserProfile] = useState(null);
+    const liffId = '2000498288-qZybW8xM';
 
+    // 初始化 LIFF
     useEffect(() => {
         const initializeLiff = async () => {
             try {
-                await liff.init({ liffId: '2000498288-qZybW8xM' });
+                await liff.init({ liffId: liffId });
                 if (liff.isLoggedIn()) {
                     fetchUserProfile();
                 } else {
-                    // Handle the case where the user is not logged in
+                    console.error('User is not logged in');
                 }
-            } catch (error) {
-                console.error('LIFF initialization failed', error);
+            } catch (err) {
+                console.error('LIFF initialization failed', err);
             }
         };
-
         initializeLiff();
     }, []);
 
+    // 取得用戶資訊
     const fetchUserProfile = async () => {
         try {
             const profile = await liff.getProfile();
             setUserProfile(profile);
-        } catch (error) {
-            console.error('Error fetching user profile', error);
+        } catch (err) {
+            console.error('Error fetching user profile', err);
         }
     };
 
