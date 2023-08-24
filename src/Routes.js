@@ -4,26 +4,26 @@ import LeafletMap from './pages/LeafletMap';
 import Chart from './pages/Chart';
 import NotFound from './pages/NotFound';
 
-const routes = [
-    {
-        path: '/',
-        element: <Home />,
-    },
-    {
-        path: '/leafletMap',
-        element: <LeafletMap />,
-    },
-    {
-        path: '/chart',
-        element: <Chart />,
-    },
-    {
-        path: '*',
-        element: <NotFound />,
-    },
-];
+function Router(userProfile) {
+    const routes = [
+        {
+            path: '/',
+            element: <Home userProfile={userProfile} />,
+        },
+        {
+            path: '/leafletMap',
+            element: <LeafletMap userProfile={userProfile} />,
+        },
+        {
+            path: '/chart',
+            element: <Chart />,
+        },
+        {
+            path: '*',
+            element: <NotFound />,
+        },
+    ];
 
-function Router() {
     const routing = useRoutes(routes);
 
     return routing;

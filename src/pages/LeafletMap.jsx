@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import MapsIcon from '../assets/images/icons/icons-maps.svg';
 import MySelfIcon from '../assets/images/icons/icons-find-my-self.svg';
 
-const LeafletMap = () => {
+const LeafletMap = (userProfile) => {
     const [userPosition, setUserPosition] = useState(null);
     const mapRef = useRef(null);
 
@@ -57,7 +57,7 @@ const LeafletMap = () => {
                 </div>
             `;
 
-            userMarker.bindPopup(popupContent);
+            userMarker.bindPopup(!userProfile ? popupContent : 'LIFF initialization failed');
 
             userMarker.on('click', () => {
                 userMarker.openPopup();
@@ -79,6 +79,7 @@ const LeafletMap = () => {
             };
             returnToUserButton.addTo(map);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userPosition]);
 
     return <div id="map" style={{ width: '100%', height: '100vh' }}></div>;

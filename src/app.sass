@@ -1,8 +1,16 @@
 @import "assets/styles/_main"
-    
+
+body
+    background-color: #F5F5F5 !important
+
 #map
     .leaflet-control-container > div:first-of-type
         top: $headerHeight
 
 .simpleTopSpacing
     padding-top: $headerHeight
+
+.text-ellipsis
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
