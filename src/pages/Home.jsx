@@ -3,12 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import liff from '@line/liff';
 import cx from 'classnames';
-import { useData } from "../utils/DataContext";
 import UserInfo from '../components/UserInfo';
 import style from './home.module.sass';
 
 const Home = () => {
-    const [userProfile, setUserProfile] = useData();
+    const [userProfile, setUserProfile] = useState(null);
     const liffId = '2000498288-qZybW8xM';
 
     const userInfoData = [
