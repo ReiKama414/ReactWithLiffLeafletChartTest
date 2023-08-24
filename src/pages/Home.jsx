@@ -1,50 +1,29 @@
 // https://developers.line.biz/zh-hant/
 // npm install @line/liff
 import React, { useState, useEffect } from 'react';
-import liff from '@line/liff';
+// import liff from '@line/liff';
 import cx from 'classnames';
 import UserInfo from '../components/UserInfo';
 import style from './home.module.sass';
 
 const Home = () => {
-    const [userProfile, setUserProfile] = useState(null);
-    const liffId = '2000498288-qZybW8xM';
+    const [userProfile, setUserProfile] = useState([]);
+    var userInfoData = userProfile
+        ? [
+              { label: 'Name', value: userProfile.displayName },
+              { label: 'UserId', value: userProfile.userId },
+              { label: 'Status Message', value: userProfile.statusMessage },
+          ]
+        : [];
 
-    const userInfoData = [
-        { label: 'Name', value: userProfile ? userProfile.displayName : '' },
-        { label: 'UserId', value: userProfile ? userProfile.userId : '' },
-        {
-            label: 'Status Message',
-            value: userProfile ? userProfile.statusMessage : '',
-        },
-    ];
-
-    // 初始化 LIFF
     useEffect(() => {
-        const initializeLiff = async () => {
-            try {
-                await liff.init({ liffId: liffId });
-                if (liff.isLoggedIn()) {
-                    fetchUserProfile();
-                } else {
-                    console.error('User is not logged in');
-                }
-            } catch (err) {
-                console.error('LIFF initialization failed', err);
-            }
-        };
-        initializeLiff();
-    }, []);
+        const storedObjectString = sessionStorage.getItem('userProfile');
+        const storedObject = JSON.parse(storedObjectString);
 
-    // 取得用戶資訊
-    const fetchUserProfile = async () => {
-        try {
-            const profile = await liff.getProfile();
-            setUserProfile(profile);
-        } catch (err) {
-            console.error('Error fetching user profile', err);
+        if (storedObject) {
+            setUserProfile(storedObject);
         }
-    };
+    }, []); // 這個空陣列表示只在元件創建時執行一次
 
     return (
         <div className="simpleTopSpacing">
