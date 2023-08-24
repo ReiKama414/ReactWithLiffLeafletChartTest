@@ -48,7 +48,7 @@ const Home = () => {
 
     return (
         <div className="simpleTopSpacing">
-            {!userProfile ? (
+            {userProfile ? (
                 <div
                     className={cx(
                         style.home_wrapper,
