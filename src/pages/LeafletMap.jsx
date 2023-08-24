@@ -55,12 +55,17 @@ const LeafletMap = () => {
                 }),
             }).addTo(map);
 
-            const popupContent = `
-                <h3>${userProfile.displayName}</h3>
-                <img src="${userProfile.pictureUrl}" alt="User's Picture" />
-            `;
-
-            userMarker.bindPopup(userProfile ? popupContent : 'ummmmmm');
+            userMarker.bindPopup(
+                userProfile
+                    ? `
+                        <img src="${userProfile.pictureUrl}" alt="User's Picture" class='rounded-2' style='width: 15rem; height: 15rem; object-fit: cover;' />
+                        <h3 class='pt-2 text-center'>${userProfile.displayName}</h3>
+                    `
+                    : 'LIFF initialization failed',
+                {
+                    closeButton: false,
+                }
+            );
 
             userMarker.on('click', () => {
                 userMarker.openPopup();
