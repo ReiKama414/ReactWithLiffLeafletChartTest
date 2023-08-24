@@ -7,7 +7,7 @@ import UserInfo from '../components/UserInfo';
 import style from './home.module.sass';
 
 const Home = () => {
-    const [userProfile, setUserProfile] = useState([]);
+    const [userProfile, setUserProfile] = useState(null);
     var userInfoData = userProfile
         ? [
               { label: 'Name', value: userProfile.displayName },
