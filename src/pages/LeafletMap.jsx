@@ -1,6 +1,7 @@
 // npm install leaflet
 import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
+import { useData } from "../utils/DataContext";
 import 'leaflet/dist/leaflet.css';
 import MapsIcon from '../assets/images/icons/icons-maps.svg';
 import MySelfIcon from '../assets/images/icons/icons-find-my-self.svg';
@@ -8,6 +9,7 @@ import MySelfIcon from '../assets/images/icons/icons-find-my-self.svg';
 const LeafletMap = () => {
     const [userPosition, setUserPosition] = useState(null);
     const mapRef = useRef(null);
+    const { userProfile } = useData();
 
     useEffect(() => {
         // Using navigator.geolocation to retrieve user's location.
@@ -47,14 +49,12 @@ const LeafletMap = () => {
                 }),
             }).addTo(map);
 
-            const displayName = "User's Name";
-            const pictureUrl = 'URL_TO_USER_PICTURE';
+            const displayName = userProfile && userProfile.displayName;
+            const pictureUrl = userProfile && userProfile.pictureUrl;
 
             const popupContent = `
-                <div>
                 <h3>${displayName}</h3>
                 <img src="${pictureUrl}" alt="User's Picture" />
-                </div>
             `;
 
             userMarker.bindPopup(popupContent);
