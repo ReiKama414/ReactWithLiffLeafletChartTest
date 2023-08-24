@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ReactWithLiffLeafletChartTest/static/css/main.13fd4df5.css",
-    "main.js": "/ReactWithLiffLeafletChartTest/static/js/main.8bb14c90.js",
+    "main.js": "/ReactWithLiffLeafletChartTest/static/js/main.132c0bfd.js",
     "static/js/787.bd8e6a9e.chunk.js": "/ReactWithLiffLeafletChartTest/static/js/787.bd8e6a9e.chunk.js",
     "static/media/icons-find-my-self.svg": "/ReactWithLiffLeafletChartTest/static/media/icons-find-my-self.67d306d90c71ab83b4028cf4cd723317.svg",
     "static/media/icons-maps.svg": "/ReactWithLiffLeafletChartTest/static/media/icons-maps.3be2101335a2275f89fdce3416378e74.svg",
     "index.html": "/ReactWithLiffLeafletChartTest/index.html",
     "main.13fd4df5.css.map": "/ReactWithLiffLeafletChartTest/static/css/main.13fd4df5.css.map",
-    "main.8bb14c90.js.map": "/ReactWithLiffLeafletChartTest/static/js/main.8bb14c90.js.map",
+    "main.132c0bfd.js.map": "/ReactWithLiffLeafletChartTest/static/js/main.132c0bfd.js.map",
     "787.bd8e6a9e.chunk.js.map": "/ReactWithLiffLeafletChartTest/static/js/787.bd8e6a9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13fd4df5.css",
-    "static/js/main.8bb14c90.js"
+    "static/js/main.132c0bfd.js"
   ]
 }
