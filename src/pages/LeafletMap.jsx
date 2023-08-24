@@ -61,7 +61,11 @@ const LeafletMap = () => {
                         <img src="${userProfile.pictureUrl}" alt="User's Picture" class='rounded-2' style='width: 15rem; height: 15rem; object-fit: cover;' />
                         <h3 class='pt-2 text-center'>${userProfile.displayName}</h3>
                     `
-                    : 'LIFF initialization failed',
+                    : sessionStorage.getItem('err')
+                    ? `
+                    <p className="pt-2 px-3">${sessionStorage.getItem('err')}</p>`
+                    : `
+                    <p className="pt-2 px-3">Loading user profile...</p>`,
                 {
                     closeButton: false,
                 }

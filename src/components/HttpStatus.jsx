@@ -1,8 +1,13 @@
 import React from 'react';
-import cx from 'classnames';
-import style from './notfound.module.sass';
+import style from './httpStatus.module.sass';
 
-const NotFound = () => {
+const HttpStatus = ({
+    color,
+    title,
+    message1,
+    message2,
+    faceColor = '#f9d7be',
+}) => {
     return (
         <div className="simpleTopSpacing vh-100 vw-100 d-flex flex-column align-items-center justify-content-center px-4 bg-dark text-light">
             <svg
@@ -32,7 +37,7 @@ const NotFound = () => {
                     </filter>
                 </defs>
                 <g>
-                    <circle r="100" cy="145" cx="150" fill="#e9f0f1">
+                    <circle r="100" cy="145" cx="150" fill={color}>
                         <animateTransform
                             attributeType="xml"
                             attributeName="transform"
@@ -43,7 +48,7 @@ const NotFound = () => {
                             repeatCount="indefinite"
                         />
                     </circle>
-                    <circle r="100" cy="155" cx="150" fill="#e9f0f1">
+                    <circle r="100" cy="155" cx="150" fill={color}>
                         <animateTransform
                             attributeType="xml"
                             attributeName="transform"
@@ -54,7 +59,7 @@ const NotFound = () => {
                             repeatCount="indefinite"
                         />
                     </circle>
-                    <circle r="100" cy="150" cx="145" fill="#e9f0f1">
+                    <circle r="100" cy="150" cx="145" fill={color}>
                         <animateTransform
                             attributeType="xml"
                             attributeName="transform"
@@ -65,7 +70,7 @@ const NotFound = () => {
                             repeatCount="indefinite"
                         />
                     </circle>
-                    <circle r="100" cy="150" cx="155" fill="#e9f0f1">
+                    <circle r="100" cy="150" cx="155" fill={color}>
                         <animateTransform
                             attributeType="xml"
                             attributeName="transform"
@@ -76,7 +81,7 @@ const NotFound = () => {
                             repeatCount="indefinite"
                         />
                     </circle>
-                    <circle r="25" cy="130" cx="95" fill="#f9d7be">
+                    <circle r="25" cy="130" cx="95" fill={faceColor}>
                         <animateTransform
                             attributeName="transform"
                             type="translate"
@@ -85,7 +90,7 @@ const NotFound = () => {
                             values="-10 0; 0 -10; 10 0; 0 10; -10 0"
                         />
                     </circle>
-                    <circle r="25" cy="130" cx="185" fill="#f9d7be">
+                    <circle r="25" cy="130" cx="185" fill={faceColor}>
                         <animateTransform
                             attributeName="transform"
                             type="translate"
@@ -127,12 +132,12 @@ const NotFound = () => {
                 className="text-center"
                 style={{ transform: 'translateY(-20%)' }}
             >
-                <h1 className={style.title}>404</h1>
-                <p>Oops! It looks like you're lost.</p>
-                <p>The page you are looking for doesn't exist.</p>
+                <h1 className={style.title}>{title}</h1>
+                <p>{message1}</p>
+                <p style={{ fontSize: '0.85rem' }}>{message2}</p>
             </div>
         </div>
     );
 };
 
-export default NotFound;
+export default HttpStatus;

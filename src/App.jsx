@@ -22,9 +22,11 @@ const App = () => {
                 if (liff.isLoggedIn()) {
                     fetchUserProfile();
                 } else {
+                    sessionStorage.setItem('err', 'User is not logged in');
                     console.error('User is not logged in');
                 }
             } catch (err) {
+                sessionStorage.setItem('err', 'LIFF initialization failed');
                 console.error('LIFF initialization failed', err);
             }
         };
@@ -38,6 +40,7 @@ const App = () => {
             const objectString = JSON.stringify(profile);
             sessionStorage.setItem('userProfile', objectString);
         } catch (err) {
+            sessionStorage.setItem('err', 'Error fetching user profile');
             console.error('Error fetching user profile', err);
         }
     };

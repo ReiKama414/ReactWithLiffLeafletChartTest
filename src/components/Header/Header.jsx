@@ -16,17 +16,29 @@ const Header = () => {
                 <Navbar.Brand as={Link} to="/">
                     Demo
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="main-navbar-nav" className='border-0' />
+                <Navbar.Toggle
+                    aria-controls="main-navbar-nav"
+                    className="border-0"
+                />
                 <Navbar.Collapse id="main-navbar-nav">
                     <Nav className="me-auto">
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/LeafletMap">
-                            <Nav.Link>Leaflet</Nav.Link>
+                            <Nav.Link>Leaflet Map</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/chart">
                             <Nav.Link>Chart</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/401">
+                            <Nav.Link>401 Unauthorized</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/403">
+                            <Nav.Link>403 Forbidden</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/404">
+                            <Nav.Link>404 Not Found</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
