@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import MapsIcon from '../assets/images/icons/icons-maps.svg';
 import MySelfIcon from '../assets/images/icons/icons-find-my-self.svg';
 
-const LeafletMap = (userProfile) => {
+const LeafletMap = () => {
     const [userPosition, setUserPosition] = useState(null);
     const mapRef = useRef(null);
 
@@ -57,7 +57,7 @@ const LeafletMap = (userProfile) => {
                 </div>
             `;
 
-            userMarker.bindPopup(!userProfile ? popupContent : 'LIFF initialization failed');
+            userMarker.bindPopup(popupContent);
 
             userMarker.on('click', () => {
                 userMarker.openPopup();
