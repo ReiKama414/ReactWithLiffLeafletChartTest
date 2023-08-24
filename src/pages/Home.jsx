@@ -11,11 +11,11 @@ const Home = () => {
     const liffId = '2000498288-qZybW8xM';
 
     const userInfoData = [
-        { label: 'Name', value: userProfile ? userProfile.displayName : '' },
-        { label: 'UserId', value: userProfile ? userProfile.userId : '' },
+        { label: 'Name', value: userProfile ? userProfile.displayName : 'Kama' },
+        { label: 'UserId', value: userProfile ? userProfile.userId : 'Ubdfdvf262+62v+6x2s2dv6s2dv3sdv2c6s' },
         {
             label: 'Status Message',
-            value: userProfile ? userProfile.statusMessage : '',
+            value: userProfile ? userProfile.statusMessage : 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xx x x xxxxxx',
         },
     ];
 
@@ -48,7 +48,7 @@ const Home = () => {
 
     return (
         <div className="simpleTopSpacing">
-            {userProfile ? (
+            {!userProfile ? (
                 <div
                     className={cx(
                         style.home_wrapper,
@@ -60,7 +60,7 @@ const Home = () => {
                             className={
                                 'border border-2 border-light rounded-4 mb-5'
                             }
-                            src={userProfile.pictureUrl}
+                            src={userProfile ? userProfile.pictureUrl :'https://images.unsplash.com/photo-1692055650839-0c6d9ccc69d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80'}
                             alt="Profile"
                         />
                     </div>
