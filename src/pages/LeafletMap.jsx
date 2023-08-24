@@ -6,10 +6,18 @@ import MapsIcon from '../assets/images/icons/icons-maps.svg';
 import MySelfIcon from '../assets/images/icons/icons-find-my-self.svg';
 
 const LeafletMap = () => {
+    const [userProfile, setUserProfile] = useState(null);
     const [userPosition, setUserPosition] = useState(null);
     const mapRef = useRef(null);
 
     useEffect(() => {
+        const storedObjectString = sessionStorage.getItem('userProfile');
+        const storedObject = JSON.parse(storedObjectString);
+
+        if (storedObject) {
+            setUserProfile(storedObject);
+        }
+
         // Using navigator.geolocation to retrieve user's location.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -47,15 +55,12 @@ const LeafletMap = () => {
                 }),
             }).addTo(map);
 
-            const displayName = "User's Name";
-            const pictureUrl = 'URL_TO_USER_PICTURE';
-
             const popupContent = `
-                <h3>${displayName}</h3>
-                <img src="${pictureUrl}" alt="User's Picture" />
+                <h3>${userProfile.displayName}</h3>
+                <img src="${userProfile.pictureUrl}" alt="User's Picture" />
             `;
 
-            userMarker.bindPopup(popupContent);
+            userMarker.bindPopup(userProfile ? popupContent : 'ummmmmm');
 
             userMarker.on('click', () => {
                 userMarker.openPopup();
@@ -64,9 +69,12 @@ const LeafletMap = () => {
             // Add a button to return to user's location
             const returnToUserButton = L.control({ position: 'bottomleft' });
             returnToUserButton.onAdd = () => {
-                const button = L.DomUtil.create('button', 'bg-transparent border-0');
+                const button = L.DomUtil.create(
+                    'button',
+                    'bg-transparent border-0'
+                );
                 button.innerHTML = `<img src="${MySelfIcon}" alt="return" />`;
-                button.title = 'Return to User\'s Location';
+                button.title = "Return to User's Location";
                 button.addEventListener('click', () => {
                     mapRef.current.setView(
                         [userPosition.lat, userPosition.lng],
@@ -77,7 +85,7 @@ const LeafletMap = () => {
             };
             returnToUserButton.addTo(map);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userPosition]);
 
     return <div id="map" style={{ width: '100%', height: '100vh' }}></div>;

@@ -23,7 +23,7 @@ const Home = () => {
         if (storedObject) {
             setUserProfile(storedObject);
         }
-    }, []); // 這個空陣列表示只在元件創建時執行一次
+    }, []);
 
     return (
         <div className="simpleTopSpacing">
