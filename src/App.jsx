@@ -4,7 +4,7 @@
 // npm install react-bootstrap
 // npm install react-router-bootstrap
 // npm install classnames
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import liff from '@line/liff';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './Routes';

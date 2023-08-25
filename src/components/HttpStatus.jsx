@@ -133,7 +133,7 @@ const HttpStatus = ({
                 style={{ transform: 'translateY(-20%)' }}
             >
                 <h1 className={style.title}>{title}</h1>
-                <p>{message1}</p>
+                <h5>{message1}</h5>
                 <p style={{ fontSize: '0.85rem' }}>{message2}</p>
             </div>
         </div>

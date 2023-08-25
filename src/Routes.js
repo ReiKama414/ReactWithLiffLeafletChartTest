@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useRoutes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import LeafletMap from './pages/LeafletMap';
-import Chart from './pages/Chart';
+import Chart from './pages/DemoChart';
 import Unauthorized from './pages/HTTP Status/401/Unauthorized';
 import Forbidden from './pages/HTTP Status/403/Forbidden';
 import NotFound from './pages/HTTP Status/404/NotFound';
