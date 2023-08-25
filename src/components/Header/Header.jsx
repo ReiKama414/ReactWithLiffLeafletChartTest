@@ -25,7 +25,7 @@ const Header = () => {
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/LeafletMap">
+                        <LinkContainer to="/leafletMap">
                             <Nav.Link>Leaflet Map</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/chart">
